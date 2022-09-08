@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            pokemon
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .inputcomp {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: -8vw;
+            }
+            body{
+                background-image: url("https://wallpapermoon.com/00160194/");
+                background-size: 100% ;
+                background-repeat: no-repeat;
+                
+            }
+            .inputcomp > input {
+                margin-bottom: 1rem;
+                /* margin-left: -8vw; */
+            }
+            #_button{
+                /* margin-left: -8vw; */
+            }
+            .pokCom {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .pokComText{
+                text-align: center;
+                margin-top: -15%;
+                margin-right: 8%;
+            }
+            .pokCom > img {
+                min-height: 40vh;
+                margin-right: 8%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class=" inputcomp">
+            <input id="_input" type="text" placeholder="Type Pokimon">
+            <button id="_button" type="submit">Pokemon Go</button>
+        </div>
+        <div class="d-flex justify-content-center inputcomp">
+            <div class="spinner-grow text-warning" id="loading" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="pokCom">
+            <img id="_img" src="" style="margin-left:-1vw;">
+        </div>
+        <div class="pokComText">
+            <h1 id="_h1"></h1>
+        </div>
+    </body>
+    <script src="/fetch.js"></script>
+</html>
