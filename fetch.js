@@ -13,6 +13,18 @@ function success() {
     }
 }
 
+function checkInp()
+{
+    var x=_input.value;
+    var regex=/^[a-zA-Z]+$/;
+    if (!x.match(regex))
+    {
+        alert("Must input string");
+        return false;
+    }
+    return true
+}
+
 let GetData = async () => {
         _loading.style.display="block"
         await fetch(`https://pokeapi.co/api/v2/pokemon/${_input.value.toLowerCase()}`).then(
@@ -30,14 +42,18 @@ let GetData = async () => {
 }
 
 _input.addEventListener("keypress",async (event)=>{
-    if(event.key=="Enter" && _input.value.trim()!=""){
+    if(event.key=="Enter" && _input.value.trim()!="" && checkInp()){
         GetData()
     }  
 })
 
 _loading.style.display="none"
 _button.disabled = true; 
-_button.addEventListener("click", GetData)
+_button.addEventListener("click",()=>{
+    if(checkInp()){
+        GetData()
+    }
+})
 
 // _button.addEventListener("click",()=>{
 //     fetch(`https://pokeapi.co/api/v2/pokemon/${_input.value}`).then(
