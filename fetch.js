@@ -1,5 +1,3 @@
-//import fetch from "node-fetch";
-
 let _button = document.getElementById("_button");
 let _input = document.getElementById("_input");
 let _img = document.getElementById("_img")
@@ -31,8 +29,6 @@ let GetData = async () => {
         })
 }
 
-
-
 _input.addEventListener("keypress",async (event)=>{
     if(event.key=="Enter" && _input.value.trim()!=""){
         GetData()
@@ -40,7 +36,7 @@ _input.addEventListener("keypress",async (event)=>{
 })
 
 _loading.style.display="none"
-
+_button.disabled = true; 
 _button.addEventListener("click", GetData)
 
 // _button.addEventListener("click",()=>{
